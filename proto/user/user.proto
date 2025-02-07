@@ -2,3 +2,16 @@ syntax = "proto3";
 
 package user;
 
+option go_package = "github.com/Tairascii/protos/gen/user;userpb";
+
+service User {
+  rpc IdByEmail(IdByEmailRequest) returns (IdByEmailResponse);
+}
+
+message IdByEmailRequest {
+  string email = 1;
+}
+
+message IdByEmailResponse {
+  string id = 1;
+}
